@@ -1,5 +1,3 @@
-# Recipes And Ratings Project
-Project 3 for DSC 80<br>
 By Abishek Siva
 ## Introduction
 
