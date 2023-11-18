@@ -32,6 +32,9 @@ The following graph shows the distribution of the number of steps in each recipe
 
 <iframe src="assets/dist_steps.html" width=800 height=600 frameBorder=0></iframe>
 
+The following graph shows the distribution of the number of ingredients in each recipe.
+
+<iframe src="assets/dist_ingredients.html" width=800 height=600 frameBorder=0></iframe>
 
 
 
