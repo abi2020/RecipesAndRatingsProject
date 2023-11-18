@@ -17,6 +17,17 @@ Number of Rows: 83782<br>
 Relevant Columns: `id`, `minutes`, `n_steps`, `n_ingredients`
 Description: `id` allows us to merge both dataframes. The `minutes`, `n_steps`, and `n_ingredients` columns will be used to determine how complex a recipe is and how this might play into the rating given to a certain recipe.
 
+## Cleaning and EDA
+
+After merging these two dataframes, we start off by only looking at the columns that we are interested in analyzing. I also set the index to be the recipe id to make the future analysis easier.
+
+EDA
+
+Univariate Analysis:<br>
+The following graph shows the distribution of the number of minutes each recipe takes. Any value over 720 was changed to 720.
+
+<iframe src="assets/dist_minutes.html" width=800 height=600 frameBorder=0></iframe>
+
 
 
 
