@@ -5,6 +5,8 @@ Analyzing a dataset of online recipes, encompassing details such as the number o
 
 Moreover, insights gained from the dataset can contribute to the optimization of user experience on recipe platforms, helping users discover and create dishes aligned with their preferences and dietary goals. Overall, the analysis of this dataset can enhance the quality and relevance of online culinary content, fostering a more engaging and satisfying experience for users seeking inspiration in the kitchen.
 
+Question: Do longer recipes (one that takes longer than 30 minutes to complete) get rated lower than short recipes?
+
 ### Interactions Dataset
 Number of Rows: 731927 <br>
 Relevant Columns: `recipe_id` and `rating` <br>
@@ -53,7 +55,7 @@ Null Hypothesis: The distribution of `n_steps` when `rating` is missing is the s
 Alternate Hypothesis: The distribution of `n_steps` when `rating` is missing is different from the distribution of `n_steps` when `rating` is not missing.<br>
 Observed Statistics: The absolute difference between the means of both distributions.
 
-The following graph shows the empirical distribution of the absolute means after 500 repetitions.
+The following graph shows the empirical distribution of the absolute difference in means after 500 repetitions.
 
 <iframe src="assets/emp_num_steps.html" width=800 height=600 frameBorder=0></iframe>
 
@@ -65,13 +67,22 @@ Null Hypothesis: The distribution of `minutes` when `rating` is missing is the s
 Alternate Hypothesis: The distribution of `minutes` when `rating` is missing is different from the distribution of `minutes` when `rating` is not missing.<br>
 Observed Statistics: The absolute difference between the means of both distributions.
 
-The following graph shows the empirical distribution of the absolute means after 500 repetitions.
+The following graph shows the empirical distribution of the absolute difference of means after 500 repetitions.
 
 <iframe src="assets/emp_num_min.html" width=800 height=600 frameBorder=0></iframe>
 
-We can see that the observed mean falls within the other means. I calculated a p-value of 0.14, which is above the 0.05 significance threshold. Thus, we fail to reject hte null hypothesis. Thus, we can predicat that `rating` is NMAR when considering `miuntes`.
+We can see that the observed mean falls within the other means. I calculated a p-value of 0.14, which is above the 0.05 significance threshold. Thus, we fail to reject hte null hypothesis. Thus, we can predicat that `rating` is NMAR when considering `minutes`.
 
+## Hypothesis Testing
 
+We will return to our original question of: Do longer recipes (one that takes longer than 30 minutes to complete) get rated lower than short recipes?
 
+Null Hypothesis: People rate long and short recipes the same way. <br>
+Alternate Hypothesis: People rate longer recipes lower than short recipes.<br>
+Observed Statisitic: Difference in the mean of `Average Rating` for long recipes and the mean of `Average Rating` for short recipes.
 
+The following graph shows the empirical distribution of the difference in means after 1000 repetitions.
 
+<iframe src="assets/last.html" width=800 height=600 frameBorder=0></iframe>
+
+We can see that the observed difference in mean is much lower than that of shuffled dataset. We calcualte a p-value of 0.0, which falls under the threshold of 0.05. Thus, we reject the null hypothesis and predict that longer recipes are likely rated lower than shorter recipes.
