@@ -55,13 +55,23 @@ Null Hypothesis: The distribution of `n_steps` when `rating` is missing is the s
 Alternate Hypothesis: The distribution of `n_steps` when `rating` is missing is different from the distribution of `n_steps` when `rating` is not missing.<br>
 Observed Statistics: The absolute difference between the means of both distributions.
 
-The following graph shows the empirical distribution of the absolute means.
+The following graph shows the empirical distribution of the absolute means after 500 repetitions.
 
 <iframe src="assets/emp_num_steps.html" width=800 height=600 frameBorder=0></iframe>
 
 We can see that the observed mean was way outside of the other means. I calculated a p-value of 0.0, which falls under the 0.05 significance threshold. Thus, we reject the null hypothesis. We can now predict that `rating` is MAR when considering `n_steps`.
 
-We will also look at the relationship between the missingness of `rating` and the missingess of `n_ingredients`.
+We will also look at the relationship between the missingness of `rating` and the missingess of `minutes`.
+
+Null Hypothesis: The distribution of `minutes` when `rating` is missing is the same as the distribution of `minutes` when `rating` is not missing.<br>
+Alternate Hypothesis: The distribution of `minutes` when `rating` is missing is different from the distribution of `minutes` when `rating` is not missing.<br>
+Observed Statistics: The absolute difference between the means of both distributions.
+
+The following graph shows the empirical distribution of the absolute means after 500 repetitions.
+
+<iframe src="assets/emp_num_min.html" width=800 height=600 frameBorder=0></iframe>
+
+We can see that the observed mean falls within the other means. I calculated a p-value of 0.14, which is above the 0.05 significance threshold. Thus, we fail to reject hte null hypothesis. Thus, we can predicat that `rating` is NMAR when considering `miuntes`.
 
 
 
